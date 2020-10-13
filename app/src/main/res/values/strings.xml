@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">wsr_tren</string>
+    <string name="text_otdel_bank">Отделения и банкоматы</string>
+    <string name="label_bank">lable_bank</string>
+    <string name="text_label">WorldSkils Bank</string>
+    <string name="btn_otdel_bank">btn_otdel_bank</string>
+    <string name="btn_kurs_val">kurs_val</string>
+    <string name="kurs_val_text">Курсы валют</string>
+    <string name="text_btn">Войти</string>
+    <string name="img_key">img_key</string>
+    <string name="back_to_exit">Вернуться назад</string>
+    <string name="title_activity_account">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+</resources>
