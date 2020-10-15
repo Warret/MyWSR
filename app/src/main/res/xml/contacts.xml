@@ -1,0 +1,18 @@
+<contacts>
+    <contact
+        first_name = "Кот"
+        last_name = "Рыжик"
+        phone = "434343"/>
+    <contact
+        first_name = "Кот"
+        last_name = "Барсик"
+        phone = "464788"/>
+    <contact
+        first_name = "Кошка"
+        last_name = "Рыжик"
+        phone = "343421"/>
+    <contact
+        first_name = "Кот"
+        last_name = "Бегемот"
+        phone = "121212"/>
+</contacts>
