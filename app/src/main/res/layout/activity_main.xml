@@ -105,16 +105,16 @@
         android:layout_width="319dp"
         android:layout_height="71dp"
         android:background="@drawable/btn_style"
-        android:text="@string/text_btn"
-        android:onClick="onClickLogin"
-        android:textAllCaps="false"
         android:gravity="center"
+        android:onClick="onClickLogin"
+        android:text="@string/text_btn"
+        android:textAllCaps="false"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageViewKurs"
-        app:layout_constraintVertical_bias="0.604" />
+        app:layout_constraintVertical_bias="0.173" />
 
     <ImageView
         android:id="@+id/imageView4"
@@ -188,5 +188,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline2" />
+
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="305dp"
+        android:layout_height="147dp"
+        app:layout_constraintBottom_toTopOf="@+id/textViewTest"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

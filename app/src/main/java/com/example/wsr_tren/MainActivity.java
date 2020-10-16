@@ -9,6 +9,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -39,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
 //       parseXML();
         try {
             XmlLoader();
-        } catch (XmlPullParserException e) {
+        } catch (XmlPullParserException | IOException e) {
             e.printStackTrace();
         }
     }
@@ -106,18 +107,26 @@ public class MainActivity extends AppCompatActivity {
 
 
 private  void XmlLoader() throws XmlPullParserException, IOException {
-    ArrayList<String> arrayList = new ArrayList<>();
+        ListView listView = (ListView) findViewById(R.id.listView);
+
+    ArrayList<String> list = new ArrayList<>();
+
     XmlPullParser parser = getResources().getXml(R.xml.contacts);
+
+
+
         while (parser.getEventType() != XmlPullParser.END_DOCUMENT){
 
             if (parser.getEventType() == XmlPullParser.START_TAG && parser.getName().equals("contact")){
-            arrayList.add(parser.getAttributeValue(0) + " " +
+                textViewTest.setText(parser.getAttributeValue(0) );
+            list.add(parser.getAttributeValue(0) + " " +
                     parser.getAttributeValue(1) + "\n" +
                     parser.getAttributeValue(2));
             }
-            parser.next();
+//            parser.next();
         }
-
+    ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1,list);
+        listView.setAdapter(adapter);
 
 }
 

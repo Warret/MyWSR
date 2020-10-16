@@ -1,10 +1,10 @@
 <contacts>
     <contact
-        first_name = "Кот"
+        first_name = "Кот1"
         last_name = "Рыжик"
         phone = "434343"/>
     <contact
-        first_name = "Кот"
+        first_name = "Кот2"
         last_name = "Барсик"
         phone = "464788"/>
     <contact
@@ -12,7 +12,7 @@
         last_name = "Рыжик"
         phone = "343421"/>
     <contact
-        first_name = "Кот"
+        first_name = "Кот3"
         last_name = "Бегемот"
         phone = "121212"/>
 </contacts>
