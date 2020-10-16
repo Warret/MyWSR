@@ -113,17 +113,22 @@ private  void XmlLoader() throws XmlPullParserException, IOException {
 
     XmlPullParser parser = getResources().getXml(R.xml.contacts);
 
+    if (parser.getEventType() == XmlPullParser.START_TAG && parser.getName().equals("contact")){
+        textViewTest.setText(parser.getAttributeValue(0) );
+    }
 
 
         while (parser.getEventType() != XmlPullParser.END_DOCUMENT){
 
             if (parser.getEventType() == XmlPullParser.START_TAG && parser.getName().equals("contact")){
-                textViewTest.setText(parser.getAttributeValue(0) );
+
             list.add(parser.getAttributeValue(0) + " " +
                     parser.getAttributeValue(1) + "\n" +
                     parser.getAttributeValue(2));
+
             }
-//            parser.next();
+            parser.next();
+
         }
     ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1,list);
         listView.setAdapter(adapter);
