@@ -114,7 +114,7 @@ private  void XmlLoader() throws XmlPullParserException, IOException {
     XmlPullParser parser = getResources().getXml(R.xml.contacts);
 
     if (parser.getEventType() == XmlPullParser.START_TAG && parser.getName().equals("contact")){
-        textViewTest.setText(parser.getAttributeValue(0) );
+        textViewTest.setText(parser.getText());
     }
 
 
@@ -123,7 +123,7 @@ private  void XmlLoader() throws XmlPullParserException, IOException {
             if (parser.getEventType() == XmlPullParser.START_TAG && parser.getName().equals("contact")){
 
             list.add(parser.getAttributeValue(0) + " " +
-                    parser.getAttributeValue(1) + "\n" +
+                    parser.getAttributeValue(1) + "\n\t\t\t\t\t\t" +
                     parser.getAttributeValue(2));
 
             }

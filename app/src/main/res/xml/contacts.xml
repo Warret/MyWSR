@@ -1,18 +1,67 @@
-<contacts>
-    <contact
-        first_name = "Кот1"
-        last_name = "Рыжик"
-        phone = "434343"/>
-    <contact
-        first_name = "Кот2"
-        last_name = "Барсик"
-        phone = "464788"/>
-    <contact
-        first_name = "Кошка"
-        last_name = "Рыжик"
-        phone = "343421"/>
-    <contact
-        first_name = "Кот3"
-        last_name = "Бегемот"
-        phone = "121212"/>
-</contacts>
+<ValCurs Date="02.03.2002" name="Foreign Currency Market">
+    <Valute ID="R01010">
+        <NumCode>036</NumCode>
+        <CharCode>AUD</CharCode>
+        <Nominal>1</Nominal>
+        <Name>Австралийский доллар</Name>
+        <Value>16,0102</Value>
+
+    </Valute>
+    <Valute ID="R01035">
+        <NumCode>826</NumCode>
+        <CharCode>GBP</CharCode>
+        <Nominal>1</Nominal>
+        <Name>Фунт стерлингов Соединенного королевства</Name>
+        <Value>43,8254</Value>
+    </Valute>
+    <Valute ID="R01090">
+        <NumCode>974</NumCode>
+        <CharCode>BYR</CharCode>
+        <Nominal>1000</Nominal>
+        <Name>Белорусских рублей</Name>
+        <Value>18,4290</Value>
+    </Valute>
+    <Valute ID="R01215">
+        <NumCode>208</NumCode>
+        <CharCode>DKK</CharCode>
+        <Nominal>10</Nominal>
+        <Name>Датских крон</Name>
+        <Value>36,1010</Value>
+    </Valute>
+    <Valute ID="R01235">
+        <NumCode>840</NumCode>
+        <CharCode>USD</CharCode>
+        <Nominal>1</Nominal>
+        <Name>Доллар США</Name>
+        <Value>30,9436</Value>
+    </Valute>
+    <Valute ID="R01239">
+        <NumCode>978</NumCode>
+        <CharCode>EUR</CharCode>
+        <Nominal>1</Nominal>
+        <Name>Евро</Name>
+        <Value>26,8343</Value>
+    </Valute>
+    <Valute ID="R01310">
+        <NumCode>352</NumCode>
+        <CharCode>ISK</CharCode>
+        <Nominal>100</Nominal>
+        <Name>Исландских крон</Name>
+        <Value>30,7958</Value>
+    </Valute>
+    <Valute ID="R01335">
+        <NumCode>398</NumCode>
+        <CharCode>KZT</CharCode>
+        <Nominal>100</Nominal>
+        <Name>Казахстанских тенге</Name>
+        <Value>20,3393</Value>
+    </Valute>
+    <Valute ID="R01350">
+        <NumCode>124</NumCode>
+        <CharCode>CAD</CharCode>
+        <Nominal>1</Nominal>
+        <Name>Канадский доллар</Name>
+        <Value>19,3240</Value>
+    </Valute>
+
+</ValCurs>
