@@ -14,17 +14,12 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import org.xmlpull.v1.XmlPullParser;
-import org.xmlpull.v1.XmlPullParserException;
-import org.xmlpull.v1.XmlPullParserFactory;
-
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    private TextView textViewTest ;
+    private TextView textViewTest = null;
+    ListView listView = null;
 //    private  TextView txt;
 
     @Override
@@ -36,13 +31,15 @@ public class MainActivity extends AppCompatActivity {
            actionBar.hide();
        }
        textViewTest = findViewById(R.id.textViewTest);
-//       txt = findViewById(R.id.textViewDollar);
-//       parseXML();
-        try {
-            XmlLoader();
-        } catch (XmlPullParserException | IOException e) {
-            e.printStackTrace();
-        }
+        listView = (ListView) findViewById(R.id.listView);
+        ArrayList<String> list = new ArrayList<>();
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1,list);
+        listView.setAdapter(adapter);
+        new DownloadXmlTask(textViewTest, adapter, list)
+                .execute("http://www.cbr.ru/scripts/XML_daily.asp?date_req=02/10/2003");
+        new DownloadJsonTask(textViewTest, adapter, list)
+                .execute("https://www.cbr-xml-daily.ru/daily_json.js");
+
     }
 
 //    private  void parseXML (){
@@ -105,35 +102,6 @@ public class MainActivity extends AppCompatActivity {
 //       txt.setText(builder.toString());
 //    }
 
-
-private  void XmlLoader() throws XmlPullParserException, IOException {
-        ListView listView = (ListView) findViewById(R.id.listView);
-
-    ArrayList<String> list = new ArrayList<>();
-
-    XmlPullParser parser = getResources().getXml(R.xml.contacts);
-
-    if (parser.getEventType() == XmlPullParser.START_TAG && parser.getName().equals("contact")){
-        textViewTest.setText(parser.getText());
-    }
-
-
-        while (parser.getEventType() != XmlPullParser.END_DOCUMENT){
-
-            if (parser.getEventType() == XmlPullParser.START_TAG && parser.getName().equals("contact")){
-
-            list.add(parser.getAttributeValue(0) + " " +
-                    parser.getAttributeValue(1) + "\n\t\t\t\t\t\t" +
-                    parser.getAttributeValue(2));
-
-            }
-            parser.next();
-
-        }
-    ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1,list);
-        listView.setAdapter(adapter);
-
-}
 
 
     public void onClickOtdBank(View view) {
