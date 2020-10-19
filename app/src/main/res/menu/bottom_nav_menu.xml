@@ -1,23 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+
+    <item
+        android:id="@+id/navigation_person"
+        app:showAsAction="always"
+        android:orderInCategory="100"
+        android:icon="@drawable/ic_baseline_person_24"
+        android:title="" />
 
     <item
         android:id="@+id/navigation_home"
+        app:showAsAction="never"
         android:icon="@drawable/ic_home_black_24dp"
         android:title="Главный" />
 
     <item
         android:id="@+id/navigation_dashboard"
+        app:showAsAction="never"
         android:icon="@drawable/ic_baseline_assignment_24"
         android:title="Платежи" />
     <item
         android:id="@+id/navigation_notifications"
+        app:showAsAction="never"
         android:icon="@drawable/ic_baseline_timer_24"
         android:title="История" />
     <item
         android:id="@+id/navigation_messages"
+        app:showAsAction="never"
         android:icon="@drawable/ic_baseline_chat_24"
         android:title="Диалоги" />
 
