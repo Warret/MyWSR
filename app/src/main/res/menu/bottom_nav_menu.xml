@@ -4,12 +4,12 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     >
 
-    <item
-        android:id="@+id/navigation_person"
-        app:showAsAction="always"
-        android:orderInCategory="100"
-        android:icon="@drawable/ic_baseline_person_24"
-        android:title="" />
+<!--    <item-->
+<!--        android:id="@+id/navigation_person"-->
+<!--        app:showAsAction="always"-->
+<!--        android:orderInCategory="100"-->
+<!--        android:icon="@drawable/ic_baseline_person_24"-->
+<!--        android:title="" />-->
 
     <item
         android:id="@+id/navigation_home"
