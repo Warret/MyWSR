@@ -20,25 +20,37 @@ public class MainActivity extends AppCompatActivity {
 
     private TextView textViewTest = null;
     ListView listView = null;
-//    private  TextView txt;
+    //    private  TextView txt;
+    public static TextView textViewUSD;
+    public static TextView textViewEUR;
+    public static TextView textViewDate;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-       ActionBar actionBar = getSupportActionBar();
-       if (actionBar != null){
-           actionBar.hide();
-       }
-       textViewTest = findViewById(R.id.textViewTest);
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.hide();
+        }
+        textViewTest = findViewById(R.id.textViewTest);
         listView = (ListView) findViewById(R.id.listView);
+        textViewUSD = findViewById(R.id.textViewUSD);
+        textViewEUR = findViewById(R.id.textViewEUR);
+        textViewDate = findViewById(R.id.textViewDate);
+
         ArrayList<String> list = new ArrayList<>();
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1,list);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, list);
         listView.setAdapter(adapter);
-        new DownloadXmlTask(textViewTest, adapter, list)
-                .execute("http://www.cbr.ru/scripts/XML_daily.asp?date_req=02/10/2003");
-        new DownloadJsonTask(textViewTest, adapter, list)
-                .execute("https://www.cbr-xml-daily.ru/daily_json.js");
+
+        JsonDownloadTask task = new JsonDownloadTask();
+        task.execute("https://www.cbr-xml-daily.ru/daily_json.js");
+
+        //        new DownloadXmlTask(textViewTest, adapter, list)
+//                .execute("http://www.cbr.ru/scripts/XML_daily.asp?date_req=02/10/2003");
+//        new DownloadJsonTask(textViewTest, adapter, list)
+//                .execute("https://www.cbr-xml-daily.ru/daily_json.js");
 
     }
 
@@ -103,49 +115,47 @@ public class MainActivity extends AppCompatActivity {
 //    }
 
 
-
     public void onClickOtdBank(View view) {
         Intent intent = new Intent(this, OtdelAndBankActivity.class);
         startActivity(intent);
 //        finish();
 
     }
+
     public void onClickKurs(View view) {
         Intent intent = new Intent(this, KursActivity.class);
         startActivity(intent);
     }
-        //диалоговое окно
-        private void myCustomDialog () {
-            AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            ConstraintLayout cl = (ConstraintLayout) getLayoutInflater().inflate(R.layout.my_dialog, null);
-            builder.setView(cl);
+
+    //диалоговое окно
+    private void myCustomDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        ConstraintLayout cl = (ConstraintLayout) getLayoutInflater().inflate(R.layout.my_dialog, null);
+        builder.setView(cl);
 
 
-            builder.setPositiveButton("Войти", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
+        builder.setPositiveButton("Войти", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
 
-                    AlertDialog alertDialog = (AlertDialog) dialog;
-                    EditText editText = alertDialog.findViewById(R.id.editTextTextPersonLogin);
-                    assert editText != null;
-                    textViewTest.setText(editText.getText().toString());
-                    alertDialog.dismiss();
-                    Intent intent = new Intent(getApplicationContext(), AccountActivity.class);
-                    startActivity(intent);
-                }
-            });
-            builder.setNegativeButton("Отмена", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
+                AlertDialog alertDialog = (AlertDialog) dialog;
+                EditText editText = alertDialog.findViewById(R.id.editTextTextPersonLogin);
+                assert editText != null;
+                textViewTest.setText(editText.getText().toString());
+                alertDialog.dismiss();
+                Intent intent = new Intent(getApplicationContext(), AccountActivity.class);
+                startActivity(intent);
+            }
+        });
+        builder.setNegativeButton("Отмена", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
 
-                }
-            });
-            AlertDialog dialog = builder.create();
-            dialog.show();
-        }
-
-
-
+            }
+        });
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
 
 
     public void onClickLogin(View view) {

@@ -30,13 +30,14 @@ public class DownloadXmlTask extends AsyncTask<String, Void, ArrayAdapter<String
 
     @Override
     protected ArrayAdapter<String> doInBackground(String... strings) {
-        Log.d("com.example.wsr_tren", "XmlLoader: started");
+        Log.d("res", "XmlLoader: started");
         XmlPullParser parser = null;
 
-        try (InputStream in = downloadUrl(strings[0]))  {
+        try (InputStream in = downloadUrl(strings[0])) {
             parser = Xml.newPullParser();
             parser.setFeature(XmlPullParser.FEATURE_PROCESS_NAMESPACES, false);
-            parser.setInput(in,null);
+            parser.setInput(in, null);
+
             if (parser.getEventType() == XmlPullParser.START_TAG && parser.getName().equals("contact")){
                 this.textViewTest.setText(parser.getText());
             }

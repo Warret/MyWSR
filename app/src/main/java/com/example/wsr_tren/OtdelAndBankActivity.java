@@ -19,6 +19,7 @@ import org.xmlpull.v1.XmlPullParserException;
 import java.io.IOException;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.logging.XMLFormatter;
 
 public class OtdelAndBankActivity extends AppCompatActivity {
 
@@ -61,6 +62,8 @@ public class OtdelAndBankActivity extends AppCompatActivity {
         String value = "";
         XmlPullParser parser = getResources().getXml(R.xml.contacts);
 
+
+
         while (parser.getEventType() != XmlPullParser.END_DOCUMENT) {
             if (parser.getEventType() == XmlPullParser.TEXT) {
                     value = parser.getText();
@@ -68,7 +71,7 @@ public class OtdelAndBankActivity extends AppCompatActivity {
             }
             parser.next();
         }
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, arrayListXML);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_activated_1, arrayListXML);
         listView.setAdapter(adapter);
 
 
