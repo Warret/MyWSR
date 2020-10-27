@@ -20,6 +20,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/home_icon" />
 
+
     <TextView
         android:id="@+id/textViewLabelText"
         android:layout_width="269dp"
@@ -29,9 +30,10 @@
         android:textSize="36sp"
         app:layout_constraintBottom_toBottomOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.233"
         app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="@+id/imageView" />
-
+        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintVertical_bias="1.0" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
@@ -52,7 +54,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline3"
-        app:srcCompat="@drawable/otd_bank_img" />
+    />
 
 
     <ImageView

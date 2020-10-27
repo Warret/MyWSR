@@ -17,7 +17,7 @@
             android:name=".AccountActivity"
             android:label="@string/title_activity_account"/>
         <activity android:name=".KursActivity" />
-        <activity android:name=".OtdelAndBankActivity" />
+        <activity android:name=".OtdelAndBank.OtdelAndBankActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

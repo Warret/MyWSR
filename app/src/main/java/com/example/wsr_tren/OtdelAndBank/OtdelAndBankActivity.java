@@ -1,36 +1,29 @@
-package com.example.wsr_tren;
+package com.example.wsr_tren.OtdelAndBank;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
-import android.widget.Adapter;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toolbar;
 
-import org.xmlpull.v1.XmlPullParser;
-import org.xmlpull.v1.XmlPullParserException;
+import com.example.wsr_tren.OtdelAndBank.RecyclerOtdelBank;
+import com.example.wsr_tren.R;
 
-import java.io.IOException;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.logging.XMLFormatter;
 
 public class OtdelAndBankActivity extends AppCompatActivity {
 
     ListView listView;
+    ArrayList<RecyclerOtdelBank> arrayList ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_otdel_and_bank);
 
-        listView = findViewById(R.id.listView);
+
         ActionBar actionBar = getSupportActionBar();
 
 //        assert actionBar != null;
@@ -39,12 +32,19 @@ public class OtdelAndBankActivity extends AppCompatActivity {
             actionBar.setDisplayHomeAsUpEnabled(true);
             actionBar.setTitle(R.string.back_to_exit);
         }
+        arrayList.add(new RecyclerOtdelBank("fewfef","fewfew","fwefwf"));
+        arrayList.add(new RecyclerOtdelBank("fewfef","fewfew","fwefwf"));
+        arrayList.add(new RecyclerOtdelBank("fewfef","fewfew","fwefwf"));
+        arrayList.add(new RecyclerOtdelBank("fewfef","fewfew","fwefwf"));
 
-        try {
-            GetParseXML();
-        } catch (XmlPullParserException | IOException e) {
-            e.printStackTrace();
-        }
+
+
+
+//        try {
+//            GetParseXML();
+//        } catch (XmlPullParserException | IOException e) {
+//            e.printStackTrace();
+//        }
     }
 
     @Override
@@ -57,24 +57,24 @@ public class OtdelAndBankActivity extends AppCompatActivity {
     }
 
 
-    private void GetParseXML() throws XmlPullParserException, IOException {
-        ArrayList<String> arrayListXML = new ArrayList<>();
-        String value = "";
-        XmlPullParser parser = getResources().getXml(R.xml.contacts);
-
-
-
-        while (parser.getEventType() != XmlPullParser.END_DOCUMENT) {
-            if (parser.getEventType() == XmlPullParser.TEXT) {
-                    value = parser.getText();
-                    arrayListXML.add(value + " ");
-            }
-            parser.next();
-        }
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_activated_1, arrayListXML);
-        listView.setAdapter(adapter);
-
-
+//    private void GetParseXML() throws XmlPullParserException, IOException {
+//        ArrayList<String> arrayListXML = new ArrayList<>();
+//        String value = "";
+//        XmlPullParser parser = getResources().getXml(R.xml.contacts);
+//
+//
+//
+//        while (parser.getEventType() != XmlPullParser.END_DOCUMENT) {
+//            if (parser.getEventType() == XmlPullParser.TEXT) {
+//                    value = parser.getText();
+//                    arrayListXML.add(value + " ");
+//            }
+//            parser.next();
+//        }
+//        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_activated_1, arrayListXML);
+//        listView.setAdapter(adapter);
+//
+//
 //        while (parser.getEventType() != XmlPullParser.END_DOCUMENT) {
 //
 //            if (parser.getEventType() == XmlPullParser.START_TAG && parser.getName().equals("Valute")) {
@@ -89,6 +89,6 @@ public class OtdelAndBankActivity extends AppCompatActivity {
 //        }
 //        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, arrayListXML);
 //        listView.setAdapter(adapter);
-    }
+//    }
 
 }
