@@ -6,13 +6,13 @@ public class RecyclerOtdelBank {
 
     private final String Street;
     private final String State;
-    private final String OpeningHours;
+    private final String Time;
 
 
-    public RecyclerOtdelBank(String street, String state, String openingHours) {
+    public RecyclerOtdelBank(String street, String state, String time) {
         Street = street;
         State = state;
-        OpeningHours = openingHours;
+        Time = time;
     }
 
     public String getStreet() {
@@ -21,11 +21,11 @@ public class RecyclerOtdelBank {
 
     public String getState() {
         return State;
-    }
 
-    public String getOpeningHours() {
-        return OpeningHours;
     }
 
 
+    public String getTime() {
+        return Time;
+    }
 }
