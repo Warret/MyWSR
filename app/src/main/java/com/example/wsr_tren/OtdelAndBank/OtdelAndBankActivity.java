@@ -17,15 +17,15 @@ import java.util.ArrayList;
 
 public class OtdelAndBankActivity extends AppCompatActivity {
 
-    private  RecyclerView recyclerView;
-    private  ArrayList<RecyclerOtdelBank> arrayList = new ArrayList<>();
+    private RecyclerView recyclerView;
+    private ArrayList<RecyclerOtdelBank> arrayList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_otdel_and_bank);
 
-
+// кнопка возврата
         ActionBar actionBar = getSupportActionBar();
 //        assert actionBar != null;
         if (actionBar != null) {
@@ -35,22 +35,21 @@ public class OtdelAndBankActivity extends AppCompatActivity {
 
         }
 
-       recyclerView = findViewById(R.id.recyclerViewSchedule);
-        arrayList.add(new RecyclerOtdelBank("Москва ул.Лесная 58","Работает","Время работы: 10:00-19:00"));
-        arrayList.add(new RecyclerOtdelBank("Москва ул.Лесная 58","Не работает","Время работы: 10:00-19:00"));
-        arrayList.add(new RecyclerOtdelBank("Москва ул.Лесная 58","Работает","Время работы: 10:00-19:00"));
-        arrayList.add(new RecyclerOtdelBank("Москва ул.Лесная 58","Работает","Время работы: 10:00-19:00"));
-        arrayList.add(new RecyclerOtdelBank("Москва ул.Лесная 58","Работает","Время работы: 10:00-19:00"));
-        arrayList.add(new RecyclerOtdelBank("Москва ул.Лесная 58","Не работает","Время работы: 10:00-19:00"));
-        arrayList.add(new RecyclerOtdelBank("Москва ул.Лесная 58","Работает","Время работы: 10:00-19:00"));
-        arrayList.add(new RecyclerOtdelBank("Москва ул.Лесная 58","Работает","Время работы: 10:00-19:00"));
-        arrayList.add(new RecyclerOtdelBank("Москва ул.Лесная 58","Не работает","Время работы: 10:00-19:00"));
+        recyclerView = findViewById(R.id.recyclerViewSchedule);
+        arrayList.add(new RecyclerOtdelBank("Москва ул.Лесная 58", "Работает", "Время работы: 10:00-19:00"));
+        arrayList.add(new RecyclerOtdelBank("Москва ул.Лесная 58", "Не работает", "Время работы: 10:00-19:00"));
+        arrayList.add(new RecyclerOtdelBank("Москва ул.Лесная 58", "Работает", "Время работы: 10:00-19:00"));
+        arrayList.add(new RecyclerOtdelBank("Москва ул.Лесная 58", "Работает", "Время работы: 10:00-19:00"));
+        arrayList.add(new RecyclerOtdelBank("Москва ул.Лесная 58", "Работает", "Время работы: 10:00-19:00"));
+        arrayList.add(new RecyclerOtdelBank("Москва ул.Лесная 58", "Не работает", "Время работы: 10:00-19:00"));
+        arrayList.add(new RecyclerOtdelBank("Москва ул.Лесная 58", "Работает", "Время работы: 10:00-19:00"));
+        arrayList.add(new RecyclerOtdelBank("Москва ул.Лесная 58", "Работает", "Время работы: 10:00-19:00"));
+        arrayList.add(new RecyclerOtdelBank("Москва ул.Лесная 58", "Не работает", "Время работы: 10:00-19:00"));
 
 
-
-       GraphicAdapter adapter = new GraphicAdapter(arrayList);
-       recyclerView.setLayoutManager(new LinearLayoutManager(this));
-       recyclerView.setAdapter(adapter);
+        GraphicAdapter adapter = new GraphicAdapter(arrayList);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(adapter);
 
 
 //        try {
@@ -60,7 +59,7 @@ public class OtdelAndBankActivity extends AppCompatActivity {
 //        }
     }
 
-    @Override
+    @Override //выход из активности
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
             this.finish();

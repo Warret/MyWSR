@@ -182,8 +182,8 @@
 
     <TextView
         android:id="@+id/textViewTest"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="52dp"
+        android:layout_height="21dp"
         android:text="Логин"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"

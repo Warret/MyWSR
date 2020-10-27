@@ -23,6 +23,7 @@ public class JsonDownloadTask extends AsyncTask<String, Void, String> {
         try {
             url = new URL(strings[0]);
             urlConnection = (HttpURLConnection) url.openConnection();
+            urlConnection.setRequestMethod("GET");
             InputStream inputStream = urlConnection.getInputStream();
             InputStreamReader isr = new InputStreamReader(inputStream);
             BufferedReader reader = new BufferedReader(isr);
@@ -52,6 +53,7 @@ public class JsonDownloadTask extends AsyncTask<String, Void, String> {
         try {
 
             JSONObject jsonObject = new JSONObject(s);
+
             JSONObject valutUSD = jsonObject.getJSONObject("Valute").getJSONObject("USD");
             JSONObject valutEUR = jsonObject.getJSONObject("Valute").getJSONObject("EUR");
             String CharCode = valutUSD.getString("CharCode");

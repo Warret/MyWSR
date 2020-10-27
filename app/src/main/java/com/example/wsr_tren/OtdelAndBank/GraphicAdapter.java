@@ -19,14 +19,12 @@ public class GraphicAdapter extends RecyclerView.Adapter <GraphicAdapter.Graphic
     public GraphicAdapter(ArrayList<RecyclerOtdelBank> graphics) {
         this.graphics = graphics;
     }
-
     @NonNull
     @Override
     public GraphicViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.recycler_otdandbank_adapter, parent, false);
        return  new GraphicViewHolder(view);
     }
-
     @Override
     public void onBindViewHolder(@NonNull GraphicViewHolder holder, int position) {
         RecyclerOtdelBank recyclerOtdelBank = graphics.get(position);
@@ -39,30 +37,21 @@ public class GraphicAdapter extends RecyclerView.Adapter <GraphicAdapter.Graphic
         }else {
             holder.textViewState.setTextColor(holder.textViewState.getResources().getColor(R.color.colorPrimaryDark));
         }
-
-
-
-
     }
-
     @Override
     public int getItemCount() {
         return graphics.size();
     }
 
     class GraphicViewHolder extends RecyclerView.ViewHolder {
-
         TextView textViewStreet;
         TextView textViewState;
         TextView textViewTime;
-
-
         public GraphicViewHolder(@NonNull View itemView) {
             super(itemView);
             textViewStreet = itemView.findViewById(R.id.textViewStreet);
             textViewState = itemView.findViewById(R.id.textViewState);
             textViewTime = itemView.findViewById(R.id.textViewTime);
-
         }
     }
 

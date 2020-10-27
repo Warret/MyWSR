@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
             actionBar.hide();
         }
         textViewTest = findViewById(R.id.textViewTest);
-        listView = (ListView) findViewById(R.id.listView);
+        listView =  findViewById(R.id.listView);
         textViewUSD = findViewById(R.id.textViewUSD);
         textViewEUR = findViewById(R.id.textViewEUR);
         textViewDate = findViewById(R.id.textViewDate);
@@ -56,8 +56,8 @@ public class MainActivity extends AppCompatActivity {
 
         //        new DownloadXmlTask(textViewTest, adapter, list)
 //                .execute("http://www.cbr.ru/scripts/XML_daily.asp?date_req=02/10/2003");
-//        new DownloadJsonTask(textViewTest, adapter, list)
-//                .execute("https://www.cbr-xml-daily.ru/daily_json.js");
+//       new DownloadJsonTask(list, adapter)
+//               .execute("https://www.cbr-xml-daily.ru/daily_json.js");
 
     }
 
